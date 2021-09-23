@@ -12,6 +12,16 @@
 	</context:component-scan>
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
+	<!-- DataSource 설정 -->
+	<context:property-placeholder location="classpath:config/database.properties" />"
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jbdc.driver}" />
+		<property name="url" value="${jbdc.url}" />
+		<property name="username" value="${jbdc.username}" />
+		<property name="password" value="${jbdc.password}" />
+	</bean>
+	
 	<!-- Transaction 설정 -->
 	<!--
 	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">

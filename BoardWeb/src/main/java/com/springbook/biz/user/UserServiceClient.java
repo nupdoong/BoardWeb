@@ -13,6 +13,7 @@ public class UserServiceClient {
 		UserService userService = (UserService) container.getBean("userService");
 		
 		// 3. 로그인 기능 테스트
+		/*
 		UserVO vo = new UserVO();
 		vo.setId("test");
 		vo.setPassword("test123");
@@ -23,6 +24,7 @@ public class UserServiceClient {
 		} else {
 			System.out.println("로그인 실패");
 		}
+		*/
 		
 		// 4. Spring 컨테이너 종료
 		container.close();
